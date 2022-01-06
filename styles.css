@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+}
+.main {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main .maps {
+  flex: auto;
+  background-color: gray;
+}
+
+.main .sidebar {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.sidebar .sidebar-header {
+  background-color: #f27352;
+  padding: 10px 20px;
+}
+
+.sidebar-header .logo {
+  text-align: center;
+}
+
+.connect {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar-header .balance-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.balance-wrapper .balance,
+.balance-wrapper .available {
+  flex: 1;
+}
+
+.balance-wrapper .balance-box {
+  background-color: white;
+  text-align: center;
+  padding: 8px;
+}
+
+.properties-wrapper {
+  flex: auto;
+  padding: 20px;
+  gap: 10px;
+  overflow: auto;
+}
+
+.propertie-item {
+  height: 200px;
+  width: 100%;
+  background-color: gray;
+  margin-bottom: 10px;
+}
+
+.my-cart {
+  background-color: #f27352;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
