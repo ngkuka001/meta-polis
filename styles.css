@@ -1,5 +1,45 @@
+/* Variable */
+:root {
+  --sizeBase: 16px;
+  --sizeSm: 12px;
+  --colorPrimary: rgb(242, 115, 82);
+  --colorPrimaryDark: rgba(181, 71, 58, 1);
+  --colorWhite: #ffffff;
+}
+
+/* Class utils */
+
+.text-small {
+  font-size: var(--sizeSm);
+  line-height: 1rem;
+}
+
+.text-white {
+  color: var(--colorWhite);
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.flex {
+  display: flex;
+}
+
+/* Font */
+@font-face {
+  font-family: GilRoy;
+  src: url(font/Gilroy_Light.otf);
+}
+
+* {
+  font-family: "GilRoy", Arial, sans-serif !important;
+}
+
 body {
   margin: 0;
+  font-size: var(--sizeBase);
+  overflow: hidden;
 }
 .main {
   display: flex;
@@ -12,7 +52,7 @@ body {
 }
 
 .main .sidebar {
-  width: 380px;
+  width: 520px;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -24,17 +64,38 @@ body {
 }
 
 .sidebar-header .logo {
-  text-align: center;
+  max-width: 180px;
+  opacity: 0.5;
+  margin: 8px auto 16px;
+}
+.sidebar-header .logo img {
+  width: 100%;
 }
 
 .connect {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.connect p {
+  font-weight: 600;
+  font-size: 24px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.connect button {
+  text-transform: uppercase;
+  color: var(--colorPrimary);
+  font-size: var(--sizeSm);
+  padding: 0 16px;
+  font-weight: bold;
 }
 
 .sidebar-header .balance-wrapper {
   display: flex;
-  gap: 8px;
+  gap: 20px;
 }
 
 .balance-wrapper .balance,
@@ -42,10 +103,19 @@ body {
   flex: 1;
 }
 
-.balance-wrapper .balance-box {
+.balance-title {
+  color: white;
+  font-size: var(--sizeSm);
+  line-height: 16px;
+}
+
+.balance-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: white;
-  text-align: center;
-  padding: 8px;
+  min-height: 26px;
+  font-weight: 700;
 }
 
 .properties-wrapper {
@@ -56,10 +126,23 @@ body {
 }
 
 .propertie-item {
-  height: 200px;
-  width: 100%;
-  background-color: gray;
+  /* width: 100%; */
+  background-color: rgba(255, 184, 0, 1);
   margin-bottom: 10px;
+  padding: 20px;
+  position: relative;
+}
+
+.propertie-content {
+  display: flex;
+  gap: 20px;
+}
+
+.propertie-content-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .my-cart {
@@ -69,4 +152,107 @@ body {
   text-align: center;
   padding: 20px;
   color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.image-propertie {
+  flex: 1;
+}
+
+.image-propertie img {
+  width: 100%;
+}
+
+.propertie-icon {
+  font-weight: bold;
+  color: var(--colorWhite);
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.propertie-icon img {
+  width: 40px;
+}
+
+.propertie-address {
+  font-size: var(--sizeSm);
+  color: var(--colorWhite);
+  margin-bottom: 12px;
+}
+
+.btn-add-to-cart {
+  background-color: var(--colorPrimary);
+  text-transform: uppercase;
+  width: 100%;
+  border: none;
+  min-height: 26px;
+  margin-top: 4px;
+  font-size: var(--sizeSm);
+  color: var(--colorWhite);
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.btn-add-to-cart.added-cart {
+  background-color: var(--colorPrimaryDark);
+}
+
+.corner-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 60px;
+}
+.corner-icon img {
+  width: 100%;
+}
+
+.cart-box {
+  background-color: #f27352;
+  position: relative;
+  padding: 5px 20px 20px 20px;
+}
+.cart-box .btn-buy {
+  height: 36px;
+  background-color: var(--colorWhite);
+  color: var(--colorPrimary);
+  width: 100%;
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+
+.arrow-cart-box {
+  width: 40px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translate(-50%, -15px);
+  cursor: pointer;
+}
+
+.cart-box-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.cart-box-items {
+  height: 180px;
+  background-color: var(--colorWhite);
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.cart-box-items .cart-item {
+  padding: 10px 20px;
+  background-color: rgba(230, 231, 232, 1);
+  font-size: var(--sizeSm);
+  width: fit-content;
 }
