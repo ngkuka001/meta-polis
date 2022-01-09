@@ -1,255 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="reset-style.css" />
     <title>Document</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="main">
-      <div class="maps">
-        <img src="images/google_map.png" style="width: 100%; height: 100vh" />
-      </div>
-      <div class="sidebar">
-        <div class="sidebar-header">
-          <div class="logo">
-            <img src="images/logo.png" />
-          </div>
-          <div class="connect">
-            <p>BUY PROPERTIES</p>
-            <button>connect</button>
-          </div>
-          <div class="balance-wrapper">
-            <div class="balance">
-              <div class="balance-title">$POLIS Balance</div>
-              <div class="balance-box">100,000 $POLIS</div>
+        <div class="maps">
+            <button class="btn-icon btn-menu" onclick="openNav()">
+              &#9776;
+            </button>
+            <div class="menu-sidebar" id="menu-sidebar">
+                <nav>
+                    <button class="btn-icon btn-close" onclick="closeNav()">
+                      &times;
+                  </button>
+                    <ul class="menu-wrapper">
+                        <li class="menu-item"><img style="width: 20px;" src="images/icons/location-icon.png" />
+                            <p>BUY PROPERTIES</p>
+                        </li>
+                        <li class="menu-item"><img style="width: 20px;" src="images/icons/dashboard-icon.png" />
+                            <p>DASHBOARD</p>
+                        </li>
+                    </ul>
+
+                </nav>
+                <div class="sidebar-footer">
+                    <img class="logo-sidebar" src="images/logo.png" />
+                </div>
             </div>
-            <div class="available">
-              <div class="balance-title">Availabel slots</div>
-              <div class="balance-box">1499/2499</div>
-            </div>
-          </div>
+            <img src="images/google_map.png" style="width: 100%; height: 100vh" />
         </div>
-        <div class="properties-wrapper">
-          <div class="propertie-item">
-            <div class="corner-icon">
-              <img src="images/corner-icon.png" />
-            </div>
-            <div>
-              <p class="text-small text-white">#0001</p>
-              <div class="propertie-content">
-                <div class="image-propertie">
-                  <img src="./images/propertie-thumnail.png" />
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="images/logo.png" />
                 </div>
-                <div class="propertie-content-right">
-                  <div>
-                    <div class="propertie-icon">
-                      <img src="images/propertie-icon.png" />
-                      <p>Bitexco Tower</p>
-                    </div>
-                    <div class="propertie-address">
-                      2 Hai Trieu, Ben Nghe, 1, HCMC
-                    </div>
-                  </div>
-                  <div>
-                    <div class="balance-box">100,000 $POLIS</div>
-                    <button class="btn-add-to-cart">Add to cart</button>
-                  </div>
-                  <div class="text-white">
-                    <p class="text-small">Owner</p>
-                    <p class="font-bold">Metapolis</p>
-                  </div>
+                <div class="connect">
+                    <p>BUY PROPERTIES</p>
+                    <button class="btn btn--secondary">CONNECT</button>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="propertie-item">
-            <div class="corner-icon">
-              <img src="images/corner-icon.png" />
-            </div>
-            <div>
-              <p class="text-small text-white">#0001</p>
-              <div class="propertie-content">
-                <div class="image-propertie">
-                  <img src="./images/propertie-thumnail.png" />
-                </div>
-                <div class="propertie-content-right">
-                  <div>
-                    <div class="propertie-icon">
-                      <img src="images/propertie-icon.png" />
-                      <p>Bitexco Tower</p>
+                <div class="balance-wrapper">
+                    <div class="balance">
+                        <div class="balance-title">$POLIS Balance</div>
+                        <div class="balance-box">100,000 $POLIS</div>
                     </div>
-                    <div class="propertie-address">
-                      2 Hai Trieu, Ben Nghe, 1, HCMC
+                    <div class="available">
+                        <div class="balance-title">Availabel slots</div>
+                        <div class="balance-box">1499/2499</div>
                     </div>
-                  </div>
-                  <div>
-                    <div class="balance-box">100,000 $POLIS</div>
-                    <button class="btn-add-to-cart">Add to cart</button>
-                  </div>
-                  <div class="text-white">
-                    <p class="text-small">Owner</p>
-                    <p class="font-bold">Metapolis</p>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="propertie-item">
-            <div class="corner-icon">
-              <img src="images/corner-icon.png" />
-            </div>
-            <div>
-              <p class="text-small text-white">#0001</p>
-              <div class="propertie-content">
-                <div class="image-propertie">
-                  <img src="./images/propertie-thumnail.png" />
-                </div>
-                <div class="propertie-content-right">
-                  <div>
-                    <div class="propertie-icon">
-                      <img src="images/propertie-icon.png" />
-                      <p>Bitexco Tower</p>
+            <div class="properties-wrapper">
+                <div class="propertie">
+                    <div class="propertie__logo-right">
+                        <img src="images/corner-icon.png" />
                     </div>
-                    <div class="propertie-address">
-                      2 Hai Trieu, Ben Nghe, 1, HCMC
+                    <div>
+                        <p class="text-small text-white">#0001</p>
+                        <div class="propertie__content">
+                            <div class="propertie__content--left">
+                                <img src="./images/propertie-thumnail.png" />
+                            </div>
+                            <div class="propertie__content--right">
+                                <div class="propertie-header">
+                                    <div class="propertie-header__name">
+                                        <img src="images/propertie-icon.png" />
+                                        <p>Bitexco Tower</p>
+                                    </div>
+                                    <div class="propertie-header__address">
+                                        2 Hai Trieu, Ben Nghe, 1, HCMC
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="balance-box mb-base">100,000 $POLIS</div>
+                                    <button class="btn btn--full btn-add-to-cart">ADD TO CART</button>
+                                </div>
+                                <div class="text-white">
+                                    <p class="text-small">Owner</p>
+                                    <p class="font-bold">Metapolis</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div>
-                    <div class="balance-box">100,000 $POLIS</div>
-                    <button class="btn-add-to-cart">Add to cart</button>
-                  </div>
-                  <div class="text-white">
-                    <p class="text-small">Owner</p>
-                    <p class="font-bold">Metapolis</p>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="propertie-item">
-            <div class="corner-icon">
-              <img src="images/corner-icon.png" />
-            </div>
-            <div>
-              <p class="text-small text-white">#0001</p>
-              <div class="propertie-content">
-                <div class="image-propertie">
-                  <img src="./images/propertie-thumnail.png" />
+            <button class="btn btn--my-cart" onclick="toggleCartBox()">MY CART</button>
+            <div class="cart-box hide">
+                <img src="images/down-arrow.png" onclick="toggleCartBox()" class="arrow-cart-box" />
+                <div class="cart-box-header">
+                    <p class="text-white font-bold">My Cart</p>
+                    <p class="text-white text-small" style="position: absolute; right: 0">
+                        Remove
+                    </p>
                 </div>
-                <div class="propertie-content-right">
-                  <div>
-                    <div class="propertie-icon">
-                      <img src="images/propertie-icon.png" />
-                      <p>Bitexco Tower</p>
-                    </div>
-                    <div class="propertie-address">
-                      2 Hai Trieu, Ben Nghe, 1, HCMC
-                    </div>
-                  </div>
-                  <div>
-                    <div class="balance-box">100,000 $POLIS</div>
-                    <button class="btn-add-to-cart">Add to cart</button>
-                  </div>
-                  <div class="text-white">
-                    <p class="text-small">Owner</p>
-                    <p class="font-bold">Metapolis</p>
-                  </div>
+                <div class="cart-box-items">
+                    <div class="cart-item">#0001</div>
                 </div>
-              </div>
+                <button class="btn-buy">BUY</button>
             </div>
-          </div>
-          <div class="propertie-item">
-            <div class="corner-icon">
-              <img src="images/corner-icon.png" />
-            </div>
-            <div>
-              <p class="text-small text-white">#0001</p>
-              <div class="propertie-content">
-                <div class="image-propertie">
-                  <img src="./images/propertie-thumnail.png" />
-                </div>
-                <div class="propertie-content-right">
-                  <div>
-                    <div class="propertie-icon">
-                      <img src="images/propertie-icon.png" />
-                      <p>Bitexco Tower</p>
-                    </div>
-                    <div class="propertie-address">
-                      2 Hai Trieu, Ben Nghe, 1, HCMC
-                    </div>
-                  </div>
-                  <div>
-                    <div class="balance-box">100,000 $POLIS</div>
-                    <button class="btn-add-to-cart">Add to cart</button>
-                  </div>
-                  <div class="text-white">
-                    <p class="text-small">Owner</p>
-                    <p class="font-bold">Metapolis</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="propertie-item">
-            <div class="corner-icon">
-              <img src="images/corner-icon.png" />
-            </div>
-            <div>
-              <p class="text-small text-white">#0001</p>
-              <div class="propertie-content">
-                <div class="image-propertie">
-                  <img src="./images/propertie-thumnail.png" />
-                </div>
-                <div class="propertie-content-right">
-                  <div>
-                    <div class="propertie-icon">
-                      <img src="images/propertie-icon.png" />
-                      <p>Bitexco Tower</p>
-                    </div>
-                    <div class="propertie-address">
-                      2 Hai Trieu, Ben Nghe, 1, HCMC
-                    </div>
-                  </div>
-                  <div>
-                    <div class="balance-box">100,000 $POLIS</div>
-                    <button class="btn-add-to-cart">Add to cart</button>
-                  </div>
-                  <div class="text-white">
-                    <p class="text-small">Owner</p>
-                    <p class="font-bold">Metapolis</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-        <button class="my-cart" onclick="toggleCartBox()">MY CART</button>
-        <div class="cart-box hide">
-          <img
-            src="images/down-arrow.png"
-            onclick="toggleCartBox()"
-            class="arrow-cart-box"
-          />
-          <div class="cart-box-header">
-            <p class="text-white font-bold">My Cart</p>
-            <p
-              class="text-white text-small"
-              style="position: absolute; right: 0"
-            >
-              Remove
-            </p>
-          </div>
-          <div class="cart-box-items">
-            <div class="cart-item">#0001</div>
-          </div>
-          <button class="btn-buy">BUY</button>
-        </div>
-      </div>
     </div>
     <script src="scripts.js"></script>
-  </body>
+</body>
+
 </html>
