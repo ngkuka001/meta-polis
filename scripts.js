@@ -5,6 +5,13 @@ const toggleCartBox = () => {
     btnCart.classList.toggle("hide");
 };
 
+const toggleCartBoxMobile = () => {
+    const cartBox = document.querySelector(".main-mobile .cart-box");
+    // const btnCart = document.querySelector(".main-mobile .btn--my-cart");
+    cartBox.classList.toggle("hide");
+    // btnCart.classList.toggle("hide");
+};
+
 const allBtnAddCart = document.querySelectorAll(".btn-add-to-cart");
 allBtnAddCart.forEach((button) => {
     button.addEventListener("click", (event) => {
@@ -18,8 +25,17 @@ allBtnAddCart.forEach((button) => {
 
 const openNav = () => {
     document.getElementById("menu-sidebar").style.width = "300px";
+    document.getElementById("menu-sidebar-mobile").style.width = "90%";
 };
 
 const closeNav = () => {
     document.getElementById("menu-sidebar").style.width = "0";
+    document.getElementById("menu-sidebar-mobile").style.width = "0";
+};
+
+const togglePropertieSidebar = () => {
+    const propertieSidebar = document.querySelector(".mobile-propertie");
+    const navigateIcon = document.querySelector(".nav-sidebar-arrow");
+    propertieSidebar.classList.toggle("visible");
+    navigateIcon.classList.toggle("visible");
 };

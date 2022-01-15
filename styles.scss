@@ -50,7 +50,7 @@ body {
     overflow: hidden;
 }
 
-.main {
+.main-desktop {
     display: flex;
     min-height: 100vh;
     .maps {
@@ -63,51 +63,39 @@ body {
         flex-direction: column;
         height: 100vh;
         flex: none;
-    }
-}
-
-.sidebar .sidebar-header {
-    background-color: #f27352;
-    padding: 10px 20px;
-}
-
-.sidebar-header .logo {
-    max-width: 180px;
-    opacity: 0.5;
-    margin: 8px auto 16px;
-    img {
-        width: 100%;
-    }
-}
-
-.connect {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px;
-    p {
-        font-weight: 600;
-        font-size: 24px;
-        color: white;
-        letter-spacing: 2px;
-    }
-    // button {
-    //     text-transform: uppercase;
-    //     color: var(--colorPrimary);
-    //     font-size: var(--sizeSm);
-    //     padding: 0 16px;
-    //     font-weight: bold;
-    // }
-}
-
-.sidebar-header .balance-wrapper {
-    display: flex;
-    gap: 20px;
-}
-
-.balance-wrapper {
-    .balance,
-    .available {
-        flex: 1;
+        .sidebar-header {
+            background-color: #f27352;
+            padding: 10px 20px;
+            .connect {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 16px;
+                p {
+                    font-weight: 600;
+                    font-size: 24px;
+                    color: white;
+                    letter-spacing: 2px;
+                }
+            }
+            .logo {
+                max-width: 180px;
+                opacity: 0.5;
+                margin: 8px auto 16px;
+                img {
+                    width: 100%;
+                }
+            }
+            .balance-wrapper {
+                display: flex;
+                gap: 20px;
+            }
+            .balance-wrapper {
+                .balance,
+                .available {
+                    flex: 1;
+                }
+            }
+        }
     }
 }
 
@@ -366,5 +354,107 @@ body {
     }
     &--my-cart {
         min-height: 80px;
+    }
+}
+
+// Mobile
+.main-mobile {
+    display: none;
+}
+
+// Responsive
+$responsive_mobile: "only screen and (max-width: 576px)";
+@mixin responsive_mobile() {
+    @media #{$responsive_mobile} {
+        @content;
+    }
+}
+
+$mobile_header-height: 80px;
+$mobile_cart_button-height: 60px;
+@include responsive_mobile {
+    .main-desktop {
+        display: none;
+    }
+    .main-mobile {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        .nav-sidebar-arrow {
+            width: 35px;
+            height: auto;
+            position: absolute;
+            top: 30%;
+            right: 0;
+            transform: rotate(90deg);
+            cursor: pointer;
+            transition: 0.5s;
+            &.visible {
+                transform: rotate(-90deg);
+            }
+        }
+        .header {
+            background-color: var(--colorPrimary);
+            padding: 20px 10px;
+            width: 100%;
+            display: flex;
+            height: $mobile_header-height;
+            &__title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                p {
+                    font-weight: bold;
+                    color: var(--colorWhite);
+                    font-size: 18px;
+                    letter-spacing: 2px;
+                }
+                &--menu {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    .btn-menu {
+                        position: unset;
+                    }
+                }
+            }
+        }
+        .main-content {
+            flex: auto;
+        }
+        .cart-wrapper {
+            background-color: var(--colorPrimary);
+            height: $mobile_cart_button-height;
+        }
+        .btn--my-cart {
+            height: $mobile_cart_button-height;
+            min-height: unset;
+            width: 100%;
+        }
+        .footer {
+            .propertie {
+                margin-bottom: 0;
+            }
+            .cart-box {
+                position: absolute;
+                width: 100%;
+                bottom: $mobile_cart_button-height;
+                z-index: 999;
+            }
+        }
+        .properties-wrapper {
+            position: fixed;
+            width: 100%;
+            height: calc( 100vh - #{$mobile_header-height} - #{$mobile_cart_button-height}) !important;
+            top: 80px;
+            left: 0;
+            background: white;
+            margin-left: 100%;
+            transition: 0.5s;
+            &.visible {
+                margin-left: 0;
+            }
+        }
     }
 }
