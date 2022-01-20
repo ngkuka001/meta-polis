@@ -59,6 +59,14 @@ $padding-sm: 10px;
   background-color: rgba(230, 231, 232, 1) !important;
 }
 
+.btn-start-mining {
+  background: #d0d2d3 !important;
+}
+
+.background-gray {
+  background-color: rgba(242, 242, 242, 1) !important;
+}
+
 a {
   cursor: pointer;
 }
@@ -144,6 +152,7 @@ body {
           width: 100%;
           p {
             color: var(--colorWhite);
+            font-size: var(--sizeSm);
           }
           &--value {
             height: 36px;
@@ -411,6 +420,23 @@ body {
   }
 }
 
+.balance-wrapper-dashboard {
+  display: flex;
+  padding: 20px;
+  padding-bottom: 0;
+  background-color: rgba(242, 242, 242, 1);
+  gap: 20px;
+  .balance-title {
+    color: unset !important;
+  }
+  .balance {
+    flex: 1;
+  }
+  .available {
+    flex: 1;
+  }
+}
+
 // Mobile
 .main-mobile {
   display: none;
@@ -441,12 +467,18 @@ $mobile_cart_button-height: 60px;
       padding: 10px;
       .balance-title {
         color: unset;
+        font-size: var(--sizeXs);
       }
       .balance {
         flex: 1;
       }
       .available {
         flex: 1;
+      }
+      &.buy-propertie {
+        .balance-box {
+          background-color: #f2f2f2;
+        }
       }
     }
     .btn {
@@ -467,6 +499,7 @@ $mobile_cart_button-height: 60px;
       height: 32px;
       min-height: 32px;
       font-size: 14px;
+      // background-color: #f2f2f2;
     }
     .sell__item {
       button {
@@ -624,6 +657,7 @@ $mobile_cart_button-height: 60px;
       }
       .btn-start-mining {
         font-size: 10px;
+        background: #d0d2d3;
       }
     }
   }
