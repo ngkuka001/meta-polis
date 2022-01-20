@@ -55,6 +55,10 @@ $padding-sm: 10px;
   margin-bottom: $padding-sm;
 }
 
+.bkg-gray {
+  background-color: rgba(230, 231, 232, 1) !important;
+}
+
 a {
   cursor: pointer;
 }
@@ -427,8 +431,29 @@ $mobile_cart_button-height: 60px;
     display: none;
   }
   .main-mobile {
-    .mb-base {
-      margin-bottom: 4px;
+    .propertie__content {
+      gap: 10px;
+    }
+    .balance-wrapper {
+      display: flex;
+      background: rgba(242, 242, 242, 1);
+      gap: $padding-base;
+      padding: 10px;
+      .balance-title {
+        color: unset;
+      }
+      .balance {
+        flex: 1;
+      }
+      .available {
+        flex: 1;
+      }
+    }
+    .btn {
+      &--secondary {
+        font-size: 10px;
+        font-family: "GilRoy-Bold", Arial, sans-serif !important;
+      }
     }
     display: flex;
     flex-direction: column;
@@ -450,7 +475,7 @@ $mobile_cart_button-height: 60px;
     }
     .menu-sidebar {
       width: 90%;
-      transform: translateX(-100%);
+      transform: translateX(-105%);
       &.visible {
         transform: translateX(0);
       }
@@ -470,15 +495,16 @@ $mobile_cart_button-height: 60px;
     }
     .header {
       background-color: var(--colorPrimary);
-      padding: 20px 10px;
+      padding: 10px;
       width: 100%;
-      display: flex;
-      height: $mobile_header-height;
+      // display: flex;
+      // height: $mobile_header-height;
       &__title {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        padding: 24px 0 16px;
         p {
           font-weight: bold;
           color: var(--colorWhite);
@@ -492,6 +518,33 @@ $mobile_cart_button-height: 60px;
           .btn-menu {
             position: unset;
             cursor: pointer;
+          }
+        }
+      }
+      .wallet {
+        display: flex;
+        gap: 10px;
+        align-items: flex-end;
+        margin-bottom: 4px;
+        .btn-porfolio {
+          font-size: var(--sizeSm);
+        }
+
+        &__box {
+          width: 100%;
+          p {
+            color: var(--colorWhite);
+            font-size: var(--sizeXs);
+            line-height: 20px;
+          }
+          &--value {
+            height: 36px;
+            background-color: var(--colorWhite);
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            font-size: var(--sizeXs);
+            font-family: "GilRoy-Bold", Arial, sans-serif !important;
           }
         }
       }
@@ -519,21 +572,26 @@ $mobile_cart_button-height: 60px;
         z-index: 999;
       }
     }
+
     .properties-wrapper {
       position: fixed;
       width: 100%;
       height: calc(100vh - #{$mobile_header-height}) !important;
-      top: 80px;
+      top: 92px;
       left: 0;
-      background: white;
+      padding: 10px;
+      background: rgba(242, 242, 242, 1);
       margin-left: 100%;
       transition: 0.5s;
-      padding: 0;
+      &.dashboard-propertie {
+        position: unset;
+        margin-left: unset;
+      }
       &.visible {
         margin-left: 0;
       }
       .propertie {
-        margin: $padding-base;
+        // margin: $padding-base;
         .propertie-header {
           &__name {
             img {
@@ -562,6 +620,9 @@ $mobile_cart_button-height: 60px;
         }
       }
       .btn-add-to-cart {
+        font-size: 10px;
+      }
+      .btn-start-mining {
         font-size: 10px;
       }
     }
