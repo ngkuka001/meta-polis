@@ -460,10 +460,24 @@ $mobile_cart_button-height: 60px;
     .propertie__content {
       gap: 10px;
     }
+    .buy-propertie-wrapper {
+      padding: 0 !important;
+      .balance-title {
+        color: white !important;
+      }
+      .buy-propertie {
+        margin-bottom: 20px;
+        padding: 10px !important;
+        gap: 10px !important;
+      }
+      .propertie {
+        margin: 10px;
+      }
+    }
     .balance-wrapper {
       display: flex;
       background: rgba(242, 242, 242, 1);
-      gap: $padding-base;
+      gap: 10px;
       padding: 10px;
       .balance-title {
         color: unset;
