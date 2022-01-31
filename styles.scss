@@ -195,13 +195,22 @@ body {
   margin-bottom: 10px;
   padding: $padding-sm $padding-base $padding-base;
   position: relative;
+  &.type--ssr {
+    background-color: #ff8d40;
+  }
+  &.type--sr {
+    background-color: #ffb800;
+  }
+  &.type--r {
+    background-color: #765eb0;
+  }
   &__logo-right {
     position: absolute;
     top: 5px;
     right: 5px;
-    width: 60px;
     img {
-      width: 100%;
+      width: auto;
+      height: 30px;
     }
   }
   &__content {
@@ -332,6 +341,7 @@ body {
   position: absolute;
   top: 40px;
   left: 20px;
+  z-index: 1;
 }
 
 .btn-close {

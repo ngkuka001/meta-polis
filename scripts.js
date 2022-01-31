@@ -58,69 +58,111 @@ window.addEventListener("load", (event) => {
 });
 
 // Generate propertie items
-const properties = [
-  {
-    code: "#00001",
-    name: "Bitexco Tower 1",
-    address: "1 Hai Trieu, Ben Nghe, 1, HCMC",
-    price: "100,000",
-    image: "./images/propertie-thumnail.png",
-  },
-  {
-    code: "#00002",
-    name: "Bitexco Tower 2",
-    address: "2 Hai Trieu, Ben Nghe, 1, HCMC",
-    price: "200,000",
-    image: "./images/propertie-thumnail.png",
-  },
-  {
-    code: "#00003",
-    name: "Bitexco Tower 3",
-    address: "3 Hai Trieu, Ben Nghe, 1, HCMC",
-    price: "300,000",
-    image: "./images/propertie-thumnail.png",
-  },
-];
+// const properties = [
+//   {
+//     code: "#00001",
+//     name: "Bitexco Tower 1",
+//     address: "1 Hai Trieu, Ben Nghe, 1, HCMC",
+//     price: "100,000",
+//     image: "./images/propertie-thumnail.png",
+//   },
+//   {
+//     code: "#00002",
+//     name: "Bitexco Tower 2",
+//     address: "2 Hai Trieu, Ben Nghe, 1, HCMC",
+//     price: "200,000",
+//     image: "./images/propertie-thumnail.png",
+//   },
+//   {
+//     code: "#00003",
+//     name: "Bitexco Tower 3",
+//     address: "3 Hai Trieu, Ben Nghe, 1, HCMC",
+//     price: "300,000",
+//     image: "./images/propertie-thumnail.png",
+//   },
+// ];
 const propertieWrapper = document.getElementById("properties-wrapper");
 
-properties.map((propertie) => {
-  propertieWrapper.insertAdjacentHTML(
-    "beforeend",
-    `<div class="propertie">
-    <div class="propertie__logo-right">
-      <img src="images/corner-icon.png" />
-    </div>
-    <div>
-      <p class="text-sm text-white">${propertie.code}</p>
-      <div class="propertie__content">
-        <div class="propertie__content--left">
-          <img src=${propertie.image} />
-        </div>
-        <div class="propertie__content--right">
-          <div class="propertie-header">
-            <div class="propertie-header__name">
-              <img src="images/propertie-icon.png" />
-              <p>${propertie.name}</p>
-            </div>
-            <div class="propertie-header__address">
-              ${propertie.address}
-            </div>
+fetch("/propertiesData.json")
+  .then((response) => response.json())
+  .then((properties) =>
+    properties.map((propertie) => {
+      propertieWrapper.insertAdjacentHTML(
+        "beforeend",
+        `<div class="propertie ${propertie.type}">
+      <div class="propertie__logo-right">
+        <img src="images/${propertie.type}.png" />
+      </div>
+      <div>
+        <p class="text-sm text-white">${propertie.code}</p>
+        <div class="propertie__content">
+          <div class="propertie__content--left">
+            <img src=${propertie.image} />
           </div>
-          <div>
-            <div class="balance-box mb-sm">$${propertie.price}</div>
-            <button class="btn btn--full btn-add-to-cart text-sm">
-              ADD TO CART
-            </button>
-          </div>
-          <div class="text-white">
-            <p class="text-sm">Owner</p>
-            <p class="font-bold">Metapolis</p>
+          <div class="propertie__content--right">
+            <div class="propertie-header">
+              <div class="propertie-header__name">
+                <img src="images/propertie-icon.png" />
+                <p>${propertie.name}</p>
+              </div>
+              <div class="propertie-header__address">
+                ${propertie.address}
+              </div>
+            </div>
+            <div>
+              <div class="balance-box mb-sm">${propertie.price}</div>
+              <button class="btn btn--full btn-add-to-cart text-sm">
+                ADD TO CART
+              </button>
+            </div>
+            <div class="text-white">
+              <p class="text-sm">Owner</p>
+              <p class="font-bold">Metapolis</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    </div>`
+      </div>`
+      );
+    })
   );
-});
 
-dashboard;
+// properties.map((propertie) => {
+//   propertieWrapper.insertAdjacentHTML(
+//     "beforeend",
+//     `<div class="propertie">
+//     <div class="propertie__logo-right">
+//       <img src="images/corner-icon.png" />
+//     </div>
+//     <div>
+//       <p class="text-sm text-white">${propertie.code}</p>
+//       <div class="propertie__content">
+//         <div class="propertie__content--left">
+//           <img src=${propertie.image} />
+//         </div>
+//         <div class="propertie__content--right">
+//           <div class="propertie-header">
+//             <div class="propertie-header__name">
+//               <img src="images/propertie-icon.png" />
+//               <p>${propertie.name}</p>
+//             </div>
+//             <div class="propertie-header__address">
+//               ${propertie.address}
+//             </div>
+//           </div>
+//           <div>
+//             <div class="balance-box mb-sm">$${propertie.price}</div>
+//             <button class="btn btn--full btn-add-to-cart text-sm">
+//               ADD TO CART
+//             </button>
+//           </div>
+//           <div class="text-white">
+//             <p class="text-sm">Owner</p>
+//             <p class="font-bold">Metapolis</p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//     </div>`
+//   );
+// });
